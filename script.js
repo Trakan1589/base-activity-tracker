@@ -1,24 +1,17 @@
 let wallets = [];
 
-function addWallet() {
-  const input = document.getElementById("walletInput");
-  const wallet = input.value.trim();
-
-  if (wallet === "") return;
-
-  wallets.push(wallet);
-  renderWallets();
-  input.value = "";
-}
-
 function renderWallets() {
   const list = document.getElementById("walletList");
   list.innerHTML = "";
 
-  wallets.forEach(wallet => {
+  wallets.forEach((wallet, index) => {
     const li = document.createElement("li");
-    li.textContent = wallet;
+
+    li.innerHTML = `
+      ${wallet}
+      <button onclick="removeWallet(${index})">Delete</button>
+    `;
+
     list.appendChild(li);
   });
 }
-
