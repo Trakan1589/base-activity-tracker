@@ -1,1 +1,19 @@
+input {
+  padding: 8px;
+  width: 250px;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin-top: 20px;
+}
+
+li {
+  background: #1e293b;
+  margin: 5px auto;
+  padding: 8px;
+  width: 300px;
+  border-radius: 6px;
+}
 
