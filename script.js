@@ -1,4 +1,9 @@
 let wallets = [];
+// Load wallets from localStorage
+const savedWallets = localStorage.getItem("wallets");
+if (savedWallets) {
+  wallets = JSON.parse(savedWallets);
+}
 
 function renderWallets() {
   const list = document.getElementById("walletList");
