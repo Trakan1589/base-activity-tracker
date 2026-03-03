@@ -6,6 +6,22 @@ if (savedWallets) {
 saveWallets();
 renderWallets();
 }
+function addWallet() {
+  const input = document.getElementById("walletInput");
+  const wallet = input.value.trim();
+
+  if (!wallet) return;
+
+  if (wallets.includes(wallet)) {
+    alert("Wallet already exists!");
+    return;
+  }
+
+  wallets.push(wallet);
+  saveWallets();
+  renderWallets();
+  input.value = "";
+}
 
 function renderWallets() {
   const list = document.getElementById("walletList");
