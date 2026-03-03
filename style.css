@@ -16,4 +16,13 @@ li {
   width: 300px;
   border-radius: 6px;
 }
+li button {
+  margin-left: 10px;
+  padding: 4px 8px;
+  background-color: crimson;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
 
