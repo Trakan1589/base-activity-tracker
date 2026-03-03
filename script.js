@@ -24,3 +24,4 @@ function removeWallet(index) {
   wallets.splice(index, 1);
   renderWallets();
 }
+renderWallets();
