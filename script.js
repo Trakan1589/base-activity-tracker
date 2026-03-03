@@ -35,14 +35,23 @@ renderWallets();
 function saveWallets() {
   localStorage.setItem("wallets", JSON.stringify(wallets));
 }
-function addWallet() {
-  const input = document.getElementById("walletInput");
-  const wallet = input.value.trim();
+function renderWallets() {
+  const list = document.getElementById("walletList");
+  const search = document.getElementById("searchInput").value.toLowerCase();
+  list.innerHTML = "";
 
-  if (!wallet) return;
+  wallets
+    .filter(wallet => wallet.toLowerCase().includes(search))
+    .forEach((wallet, index) => {
+      const li = document.createElement("li");
 
-  wallets.push(wallet);
-  saveWallets();
-  renderWallets();
-  input.value = "";
+      li.innerHTML = `
+        ${wallet}
+        <button onclick="removeWallet(${index})">Delete</button>
+      `;
+
+      list.appendChild(li);
+    });
+
+  document.getElementById("walletCount").textContent = wallets.length;
 }
