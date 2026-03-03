@@ -71,3 +71,10 @@ function renderWallets() {
 
   document.getElementById("walletCount").textContent = wallets.length;
 }
+function clearAll() {
+  if (!confirm("Are you sure you want to delete all wallets?")) return;
+
+  wallets = [];
+  saveWallets();
+  renderWallets();
+}
