@@ -20,6 +20,8 @@ function renderWallets() {
   wallets.splice(index, 1);
   saveWallets();
   renderWallets();
+  document.getElementById("walletCount").textContent = wallets.length;
+
 }
 
     list.appendChild(li);
