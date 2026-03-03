@@ -15,3 +15,7 @@ function renderWallets() {
     list.appendChild(li);
   });
 }
+function removeWallet(index) {
+  wallets.splice(index, 1);
+  renderWallets();
+}
