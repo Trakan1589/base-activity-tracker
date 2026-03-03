@@ -33,3 +33,14 @@ renderWallets();
 function saveWallets() {
   localStorage.setItem("wallets", JSON.stringify(wallets));
 }
+function addWallet() {
+  const input = document.getElementById("walletInput");
+  const wallet = input.value.trim();
+
+  if (!wallet) return;
+
+  wallets.push(wallet);
+  saveWallets();
+  renderWallets();
+  input.value = "";
+}
