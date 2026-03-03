@@ -28,4 +28,9 @@ li button {
 h3 {
   margin-top: 20px;
 }
+#searchInput {
+  margin: 10px 0;
+  padding: 6px;
+  width: 100%;
+}
 
