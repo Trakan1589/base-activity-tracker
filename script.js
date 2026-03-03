@@ -16,8 +16,11 @@ function renderWallets() {
 
     li.innerHTML = `
       ${wallet}
-      <button onclick="removeWallet(${index})">Delete</button>
-    `;
+     function removeWallet(index) {
+  wallets.splice(index, 1);
+  saveWallets();
+  renderWallets();
+}
 
     list.appendChild(li);
   });
