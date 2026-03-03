@@ -2,7 +2,9 @@ let wallets = [];
 // Load wallets from localStorage
 const savedWallets = localStorage.getItem("wallets");
 if (savedWallets) {
-  wallets = JSON.parse(savedWallets);
+  wallets.push(wallet);
+saveWallets();
+renderWallets();
 }
 
 function renderWallets() {
@@ -25,3 +27,6 @@ function removeWallet(index) {
   renderWallets();
 }
 renderWallets();
+function saveWallets() {
+  localStorage.setItem("wallets", JSON.stringify(wallets));
+}
