@@ -6,15 +6,29 @@
 </head>
   <div class="container">
 <body>
-  <h1>Base Activity Tracker</h1>
+  <div class="hero">
+    <h1>Base Activity Tracker</h1>
+    <p>Track and manage wallet activity in a simple SaaS-style dashboard.</p>
+    <button onclick="toggleDarkMode()" class="dark-toggle">Toggle Dark Mode</button>
+  </div>
 
-  <input type="text" id="walletInput" placeholder="Enter wallet address">
-  <button onclick="addWallet()">Add Wallet</button>
-<h3>Total Wallets: <span id="walletCount">0</span></h3>
-<input type="text" id="searchInput" placeholder="Search wallet..." oninput="renderWallets()" />
-<button onclick="clearAll()">Clear All</button>
+  <div class="container">
+    <div class="input-group">
+      <input type="text" id="walletInput" placeholder="Enter wallet address" />
+      <button onclick="addWallet()">Add Wallet</button>
+    </div>
 
-  <ul id="walletList"></ul>
+    <h3>Total Wallets: <span id="walletCount">0</span></h3>
+
+    <input type="text" id="searchInput" placeholder="Search wallet..." oninput="renderWallets()" />
+
+    <div class="action-buttons">
+      <button onclick="clearAll()">Clear All</button>
+      <button onclick="exportWallets()">Export JSON</button>
+    </div>
+
+    <ul id="walletList"></ul>
+  </div>
 
   <script src="script.js"></script>
 </body>
