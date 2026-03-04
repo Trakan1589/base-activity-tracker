@@ -90,3 +90,6 @@ function exportWallets() {
 
   URL.revokeObjectURL(url);
 }
+function toggleDarkMode() {
+  document.body.classList.toggle("dark-mode");
+}
